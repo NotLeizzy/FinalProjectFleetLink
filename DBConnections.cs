@@ -5,7 +5,7 @@ namespace FinalProjectFleetLink
 {
     public class DbConnections
     {
-        private readonly string connectionString =
+        public string ConnectionString { get; } =
             @"Data Source=LAPTOP-L61316P6\MSSQLSERVER03;
               Initial Catalog=FleetLinkDB;
               Integrated Security=True;
@@ -14,7 +14,7 @@ namespace FinalProjectFleetLink
 
         public SqlConnection GetConnection()
         {
-            return new SqlConnection(connectionString);
+            return new SqlConnection(ConnectionString);
         }
     }
 }
